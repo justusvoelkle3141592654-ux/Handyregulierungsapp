@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Handyzeitvertreib</string>
+
+    <!-- Durations -->
+    <string name="duration_hours_minutes">%1$d Std. %2$d Min.</string>
+    <string name="duration_hours">%1$d Std.</string>
+    <string name="duration_minutes">%1$d Min.</string>
+    <string name="duration_less_than_minute">&lt; 1 Min.</string>
+
+    <!-- Navigation -->
+    <string name="nav_today">Heute</string>
+    <string name="nav_apps">Apps</string>
+    <string name="nav_limits">Limits</string>
+    <string name="nav_insights">Einblicke</string>
+    <string name="nav_settings">Einstellungen</string>
+    <string name="title_app_detail">App-Details</string>
+    <string name="title_app_limit">App-Limit</string>
+    <string name="title_group_limit">Gruppenlimit</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Zurück</string>
+    <string name="action_next">Weiter</string>
+    <string name="action_cancel">Abbrechen</string>
+    <string name="action_save">Speichern</string>
+    <string name="action_delete">Löschen</string>
+    <string name="action_edit">Bearbeiten</string>
+    <string name="action_view">Ansehen</string>
+    <string name="action_refresh">Aktualisieren</string>
+    <string name="action_retry">Erneut versuchen</string>
+    <string name="action_details">Details</string>
+    <string name="action_show_all">Alle</string>
+    <string name="action_add_limit">Limit hinzufügen</string>
+    <string name="action_add_app_limit">App-Limit hinzufügen</string>
+    <string name="action_add_group">Gruppe erstellen</string>
+    <string name="action_set_limit">Limit festlegen</string>
+    <string name="action_edit_limit">Limit bearbeiten</string>
+    <string name="action_delete_limit">Limit löschen</string>
+    <string name="action_delete_group">Gruppe löschen</string>
+    <string name="action_open_settings">Einstellungen öffnen</string>
+    <string name="action_open_usage_access">Nutzungszugriff öffnen</string>
+    <string name="action_open_accessibility_settings">Bedienungshilfen öffnen</string>
+    <string name="action_set_up_usage_access">Nutzungszugriff einrichten</string>
+    <string name="action_allow_notifications">Benachrichtigungen erlauben</string>
+    <string name="action_set_up_biometrics">Biometrie einrichten</string>
+    <string name="action_change_in_settings">In den Einstellungen ändern</string>
+    <string name="action_export">Exportieren</string>
+    <string name="action_sign_out">Abmelden</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Heute</string>
+    <string name="dashboard_today_total">Bildschirmzeit heute</string>
+    <string name="dashboard_compare_more">%1$s mehr als gestern bis zu dieser Uhrzeit</string>
+    <string name="dashboard_compare_less">%1$s weniger als gestern bis zu dieser Uhrzeit</string>
+    <string name="dashboard_compare_same">Genauso viel wie gestern bis zu dieser Uhrzeit</string>
+    <string name="dashboard_compare_unavailable">Für gestern liegen keine vollständigen Daten vor.</string>
+    <string name="dashboard_last_updated">Zuletzt aktualisiert: %1$s</string>
+    <string name="dashboard_active_limits">Aktive Limits</string>
+    <string name="dashboard_limited_total">Zusammen in begrenzten Apps: %1$s (jede App einmal gezählt)</string>
+    <string name="dashboard_most_used">Am meisten genutzt</string>
+    <string name="dashboard_no_limits_title">Noch keine Limits</string>
+    <string name="dashboard_no_limits_body">Lege für Apps, die du bewusster nutzen möchtest, ein Tageslimit fest.</string>
+    <string name="dashboard_no_usage_title">Noch keine Nutzung</string>
+    <string name="dashboard_no_usage_body">Für diesen Zeitraum wurde keine App im Vordergrund erfasst.</string>
+    <string name="dashboard_reached_title">Die geplante Zeit für %1$s ist aufgebraucht.</string>
+    <string name="dashboard_access_required_title">Nutzungszugriff fehlt</string>
+    <string name="dashboard_access_required_body">Ohne Nutzungszugriff kann Handyzeitvertreib nicht sehen, wie lange Apps geöffnet waren. Es werden keine Nullwerte angezeigt, weil schlicht keine Daten vorliegen.</string>
+    <string name="dashboard_enforcement_hint_title">Hinweise kommen nur verzögert</string>
+    <string name="dashboard_enforcement_hint_notification">Ohne den optionalen Bedienungshilfen-Dienst erfährst du von einem erreichten Limit per Benachrichtigung – meist innerhalb von etwa 15 Minuten, je nach Gerät auch später. Tippe hier, um die Optionen anzusehen.</string>
+    <string name="dashboard_enforcement_hint_in_app">Erreichte Limits siehst du derzeit nur, wenn du Handyzeitvertreib öffnest. Tippe hier, um Benachrichtigungen oder den optionalen Bedienungshilfen-Dienst einzurichten.</string>
+    <string name="error_usage_title">Nutzungsdaten konnten nicht gelesen werden</string>
+    <string name="error_usage_body">Android hat die Daten gerade nicht geliefert. Das ist meist vorübergehend.</string>
+
+    <!-- Limits (shared) -->
+    <string name="limit_status_reached">Limit erreicht</string>
+    <string name="limit_status_remaining">noch %1$s</string>
+    <string name="limit_status_paused">Pausiert</string>
+    <string name="limit_usage_of_app">%1$s von %2$s genutzt · App-Limit</string>
+    <string name="limit_usage_of_group">%1$s von %2$s genutzt · Gruppenlimit (alle Apps zusammen)</string>
+
+    <!-- Apps -->
+    <string name="apps_title">Apps</string>
+    <string name="apps_search_hint">Apps suchen</string>
+    <string name="apps_sort_usage">Nutzungszeit</string>
+    <string name="apps_sort_name">Name</string>
+    <string name="apps_sort_opens">Öffnungen</string>
+    <string name="apps_filter_all">Alle</string>
+    <string name="apps_filter_with_limit">Mit Limit</string>
+    <string name="apps_filter_used_today">Heute genutzt</string>
+    <string name="apps_row_supporting">%1$s · %2$d× geöffnet</string>
+    <string name="apps_usage_unknown">Nutzung unbekannt</string>
+    <string name="apps_usage_unavailable">Ohne Nutzungszugriff sind keine Zeiten verfügbar. Limits kannst du trotzdem schon anlegen.</string>
+    <string name="apps_not_installed">Nicht mehr installiert</string>
+    <string name="apps_empty_title">Keine passenden Apps</string>
+    <string name="apps_empty_body">Ändere die Suche oder den Filter.</string>
+
+    <!-- App detail -->
+    <string name="app_detail_today">Heute</string>
+    <string name="app_detail_opens">%1$d× geöffnet</string>
+    <string name="app_detail_last_7_days">Letzte 7 Tage</string>
+    <string name="app_detail_limit">Tageslimit</string>
+    <string name="app_detail_no_limit">Für diese App ist kein eigenes Limit festgelegt.</string>
+    <string name="app_detail_limit_value">%1$s pro Tag</string>
+    <string name="app_detail_limit_paused">%1$s pro Tag – derzeit pausiert</string>
+    <string name="app_detail_governed_by_group">Maßgeblich ist gerade das strengere Gruppenlimit „%1$s“.</string>
+    <string name="app_detail_groups">Teil der Gruppen: %1$s</string>
+    <string name="app_detail_extension">Mehr Zeit anfordern</string>
+    <string name="app_detail_extension_summary">%1$s pro Verlängerung, höchstens %2$d× pro Tag und Limit, immer mit Bestätigung</string>
+    <string name="app_detail_extension_disabled">Verlängerungen sind ausgeschaltet</string>
+    <string name="app_detail_count_in_total">In Gesamtzeit einrechnen</string>
+    <string name="app_detail_count_in_total_body">Ausgeschaltet zählt diese App nicht zur Bildschirmzeit von heute. Limits gelten weiterhin.</string>
+
+    <!-- Limit editor -->
+    <string name="limit_editor_new_title">Neues Limit für</string>
+    <string name="limit_editor_edit_title">Limit bearbeiten für</string>
+    <string name="limit_editor_daily_limit">Tageslimit</string>
+    <string name="limit_editor_daily_limit_body">In 5-Minuten-Schritten, zwischen 5 Minuten und knapp 24 Stunden.</string>
+    <string name="limit_editor_decrease">5 Minuten weniger</string>
+    <string name="limit_editor_increase">5 Minuten mehr</string>
+    <string name="limit_editor_enabled">Limit aktiv</string>
+    <string name="limit_editor_enabled_body">Pausierte Limits bleiben gespeichert, werden aber nicht geprüft.</string>
+    <string name="limit_delete_title">Limit löschen?</string>
+    <string name="limit_delete_body">Das Limit wird entfernt. Deine bisherige Nutzungshistorie bleibt erhalten.</string>
+
+    <!-- Groups -->
+    <string name="group_editor_name">Name der Gruppe</string>
+    <string name="group_editor_daily_limit">Gemeinsames Tageslimit</string>
+    <string name="group_editor_daily_limit_body">Die Zeit aller ausgewählten Apps wird zusammengezählt.</string>
+    <string name="group_editor_apps">Apps in der Gruppe (%1$d)</string>
+    <string name="group_editor_invalid">Gib einen Namen ein und wähle mindestens eine App.</string>
+    <string name="group_delete_title">Gruppe löschen?</string>
+    <string name="group_delete_body">Die Gruppe und ihr Limit werden entfernt. Die Nutzungshistorie der Apps bleibt erhalten.</string>
+
+    <!-- Limits overview -->
+    <string name="limits_title">Limits</string>
+    <string name="limits_app_section">App-Limits</string>
+    <string name="limits_group_section">Gruppenlimits</string>
+    <string name="limits_group_explanation">Ein Gruppenlimit zählt die Zeit mehrerer Apps zusammen. Gelten für eine App mehrere Limits, greift jeweils das, bei dem weniger Zeit übrig ist.</string>
+    <string name="limits_app_summary">%1$s pro Tag</string>
+    <string name="limits_group_summary">%1$s pro Tag · Apps: %2$d</string>
+    <string name="limits_no_app_limits_title">Keine App-Limits</string>
+    <string name="limits_no_app_limits_body">Wähle unter „Apps“ eine App aus, um ihr ein Tageslimit zu geben.</string>
+    <string name="limits_no_groups_title">Keine Gruppen</string>
+    <string name="limits_no_groups_body">Zum Beispiel: alle sozialen Netzwerke zusammen 45 Minuten pro Tag.</string>
+    <string name="limits_usage_unavailable">Ohne Nutzungszugriff kann die verbleibende Zeit nicht berechnet werden.</string>
+
+    <!-- Insights -->
+    <string name="insights_title">Einblicke</string>
+    <string name="insights_day">Tag</string>
+    <string name="insights_week">Woche</string>
+    <string name="insights_previous">Vorheriger Zeitraum</string>
+    <string name="insights_next">Nächster Zeitraum</string>
+    <string name="insights_range">%1$s – %2$s</string>
+    <string name="insights_total_day">Bildschirmzeit an diesem Tag</string>
+    <string name="insights_total_week">Bildschirmzeit in 7 Tagen</string>
+    <string name="insights_average">Ø %1$s pro erfasstem Tag · erfasste Tage: %2$d</string>
+    <string name="insights_week_chart">Bildschirmzeit pro Tag</string>
+    <string name="insights_app_breakdown">Nach App</string>
+    <string name="insights_no_data_title">Keine Daten für diesen Zeitraum</string>
+    <string name="insights_no_data_body">Für diese Tage liegen keine gespeicherten Daten vor, zum Beispiel weil Handyzeitvertreib damals noch keinen Nutzungszugriff hatte. Das bedeutet nicht, dass das Handy nicht genutzt wurde.</string>
+    <string name="insights_no_data_short">keine Daten</string>
+    <string name="insights_missing_days_hint">Graue Balken: Für diese Tage liegen keine Daten vor.</string>
+    <string name="insights_no_app_usage">In diesem Zeitraum wurde keine App-Nutzung erfasst.</string>
+
+    <!-- Regulation -->
+    <string name="regulation_title">Deine geplante Zeit für diese App ist vorbei.</string>
+    <string name="regulation_not_reached_title">Dieses Limit ist gerade nicht erreicht.</string>
+    <string name="regulation_used_app">Heute %1$s genutzt – dein Limit liegt bei %2$s.</string>
+    <string name="regulation_used_group">Heute %1$s in dieser Gruppe genutzt – das gemeinsame Limit liegt bei %2$s.</string>
+    <string name="regulation_remaining">Noch %1$s übrig.</string>
+    <string name="regulation_reached_at">Erreicht um %1$s</string>
+    <string name="regulation_choices">Du kannst die App schließen, deine Limits ansehen oder bewusst mehr Zeit anfordern.</string>
+    <string name="regulation_leave">App verlassen</string>
+    <string name="regulation_review_limits">Limits ansehen</string>
+    <string name="regulation_return_to_app">Zurück zu %1$s</string>
+    <string name="regulation_extension_title">Mehr Zeit</string>
+    <string name="regulation_extension_body">Du kannst bewusst %1$s mehr anfordern. Dafür ist eine Bestätigung mit Fingerabdruck oder einer anderen Gerätesicherung nötig. Heute noch möglich: %2$d×</string>
+    <string name="regulation_extension_button">%1$s mehr anfordern</string>
+    <string name="regulation_extension_disabled">Verlängerungen sind in den Einstellungen ausgeschaltet.</string>
+    <string name="regulation_extension_cap">Heute sind keine weiteren Verlängerungen möglich (höchstens %1$d× pro Tag).</string>
+    <string name="regulation_outcome_granted">Zusätzliche Zeit wurde hinzugefügt.</string>
+    <string name="regulation_outcome_cancelled">Bestätigung abgebrochen. Es wurde keine Zeit hinzugefügt.</string>
+    <string name="regulation_outcome_locked">Zu viele Versuche. Die Bestätigung ist vorübergehend gesperrt.</string>
+    <string name="regulation_outcome_locked_permanent">Die biometrische Bestätigung ist gesperrt. Entsperre dein Gerät einmal mit PIN, Muster oder Passwort.</string>
+    <string name="regulation_outcome_not_available">Auf diesem Gerät ist gerade keine passende Bestätigung verfügbar.</string>
+    <string name="regulation_outcome_failed">Die Bestätigung ist fehlgeschlagen. Es wurde keine Zeit hinzugefügt.</string>
+    <string name="regulation_unavailable_title">Limit nicht verfügbar</string>
+    <string name="regulation_unavailable_body">Das Limit wurde gelöscht, oder die Nutzungsdaten sind gerade nicht lesbar.</string>
+
+    <!-- Authentication -->
+    <string name="auth_prompt_title">%1$d Minuten mehr bestätigen</string>
+    <string name="auth_prompt_subtitle">Die zusätzliche Zeit wird nur nach erfolgreicher Bestätigung gewährt.</string>
+    <string name="auth_available">Bestätigung verfügbar</string>
+    <string name="auth_not_available_short">Bestätigung nicht verfügbar</string>
+    <string name="auth_none_enrolled">Auf diesem Gerät ist kein Fingerabdruck und keine andere Biometrie eingerichtet.</string>
+    <string name="auth_no_hardware">Dieses Gerät hat keinen passenden biometrischen Sensor. Du kannst in den Einstellungen die Bestätigung per PIN, Muster oder Passwort erlauben.</string>
+    <string name="auth_hw_unavailable">Der biometrische Sensor ist gerade nicht verfügbar.</string>
+    <string name="auth_security_update">Für die biometrische Bestätigung ist ein Sicherheitsupdate nötig.</string>
+    <string name="auth_unsupported">Die gewählte Bestätigungsart wird auf diesem Gerät nicht unterstützt.</string>
+
+    <!-- Extension policy -->
+    <string name="extension_enabled">Verlängerungen erlauben</string>
+    <string name="extension_enabled_body">Nach Erreichen eines Limits kannst du bewusst etwas mehr Zeit anfordern.</string>
+    <string name="extension_duration">Dauer pro Verlängerung</string>
+    <string name="extension_max_per_day">Höchstens pro Tag und Limit</string>
+    <string name="extension_times">%1$d×</string>
+    <string name="extension_device_credential">PIN, Muster oder Passwort zulassen</string>
+    <string name="extension_device_credential_body">Nützlich ohne Fingerabdrucksensor. Ausgeschaltet ist nur Biometrie erlaubt.</string>
+    <string name="extension_settings_intro">Änderungen gelten erst nach dem Speichern. Wenn du die Regeln lockerst, fragt die App noch einmal nach.</string>
+    <string name="extension_loosen_title">Regeln lockern?</string>
+    <string name="extension_loosen_body">Mit dieser Änderung wird es leichter, über deine Limits hinaus Zeit zu bekommen. Möchtest du das wirklich?</string>
+
+    <!-- Permissions -->
+    <string name="permission_granted">Erteilt</string>
+    <string name="permission_missing">Fehlt</string>
+    <string name="permission_enabled">Aktiv</string>
+    <string name="permission_optional_off">Optional, aus</string>
+    <string name="permission_usage_body">Nötig, um Bildschirmzeit und Limits zu messen.</string>
+    <string name="permission_notifications_body">Für eine ruhige Nachricht, wenn ein Limit erreicht ist.</string>
+    <string name="permission_accessibility_body">Optional. Öffnet den Hinweis-Bildschirm direkt, wenn du eine App mit erreichtem Limit startest.</string>
+    <string name="usage_access_title">Nutzungszugriff</string>
+    <string name="usage_access_what">„Nutzungszugriff“ ist eine Android-Berechtigung. Sie erlaubt Handyzeitvertreib zu lesen, welche App wann im Vordergrund war.</string>
+    <string name="usage_access_point_local">Die Daten werden nur auf diesem Gerät ausgewertet und gespeichert.</string>
+    <string name="usage_access_point_minimal">Gespeichert werden nur Tagessummen pro App und die Anzahl der Öffnungen.</string>
+    <string name="usage_access_point_no_content">Keine Inhalte: keine Nachrichten, keine Eingaben, keine Bildschirminhalte.</string>
+    <string name="usage_access_point_no_upload">Kein Hochladen: die App hat keinen Server und keine Tracker.</string>
+    <string name="usage_access_how_title">So richtest du es ein</string>
+    <string name="usage_access_how_body">Tippe auf den Button, wähle in der Liste „Handyzeitvertreib“ und schalte „Nutzungszugriff erlauben“ ein. Kehre danach mit der Zurück-Taste hierher zurück. Die Bezeichnungen können je nach Hersteller leicht abweichen.</string>
+    <string name="usage_access_revoke">Du kannst den Zugriff jederzeit an derselben Stelle wieder entziehen.</string>
+    <string name="accessibility_title">Bedienungshilfen-Dienst</string>
+    <string name="accessibility_what">Dieser Dienst ist optional und standardmäßig aus. Er sorgt dafür, dass der Hinweis-Bildschirm erscheint, sobald du eine App mit erreichtem Limit öffnest.</string>
+    <string name="accessibility_point_observes">Er erfährt nur, welche App gerade in den Vordergrund kommt (den Paketnamen).</string>
+    <string name="accessibility_point_action">Er öffnet den Hinweis-Bildschirm von Handyzeitvertreib, sonst nichts.</string>
+    <string name="accessibility_point_no_content">Er liest keine Bildschirminhalte, keine Texte und keine Eingaben.</string>
+    <string name="accessibility_point_no_storage">Er speichert und sendet selbst keine Daten.</string>
+    <string name="accessibility_limits_title">Was er nicht kann</string>
+    <string name="accessibility_limits_body">Android garantiert keiner normalen App eine lückenlose Sperre. Manche Hersteller beenden Dienste im Hintergrund, und du kannst den Dienst jederzeit ausschalten. Der Hinweis soll dir helfen, nicht dich überwachen.</string>
+    <string name="accessibility_disable">Ausschalten: Einstellungen › Bedienungshilfen › Handyzeitvertreib.</string>
+    <string name="accessibility_service_label" translatable="false">Handyzeitvertreib</string>
+    <string name="accessibility_service_description">Zeigt den Hinweis-Bildschirm von Handyzeitvertreib, wenn du eine App öffnest, deren Tageslimit erreicht ist. Der Dienst erfährt nur, welche App im Vordergrund ist, und liest keine Bildschirminhalte.</string>
+    <string name="accessibility_service_summary">Hinweis-Bildschirm bei erreichten Limits</string>
+
+    <!-- Enforcement -->
+    <string name="enforcement_current">Aktuelle Wirkung deiner Limits</string>
+    <string name="enforcement_level_none">Limits können nicht gemessen werden (Nutzungszugriff fehlt)</string>
+    <string name="enforcement_level_in_app">Hinweise nur beim Öffnen von Handyzeitvertreib</string>
+    <string name="enforcement_level_notification">Benachrichtigung, meist innerhalb von etwa 15 Minuten</string>
+    <string name="enforcement_level_screen">Hinweis-Bildschirm beim Öffnen einer begrenzten App</string>
+    <string name="enforcement_no_guarantee">Keine Stufe ist eine garantierte Sperre. Android und manche Hersteller schränken Hintergrundaktivität ein.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_start">Los geht\'s</string>
+    <string name="onboarding_later">Später</string>
+    <string name="onboarding_skip">Überspringen</string>
+    <string name="onboarding_finish">Fertig</string>
+    <string name="onboarding_welcome_title">Willkommen bei Handyzeitvertreib</string>
+    <string name="onboarding_welcome_body">Sieh, wofür deine Zeit am Handy draufgeht, und setz dir selbst Grenzen – in deinem Tempo.</string>
+    <string name="onboarding_purpose_title">Was die App für dich tut</string>
+    <string name="onboarding_purpose_see">Zeigt, wie lange du welche App heute genutzt hast.</string>
+    <string name="onboarding_purpose_limit">Lässt dich Tageslimits für einzelne Apps oder Gruppen festlegen.</string>
+    <string name="onboarding_purpose_pause">Erinnert dich ruhig, wenn deine geplante Zeit vorbei ist.</string>
+    <string name="onboarding_purpose_extend">Mehr Zeit gibt es nur bewusst – mit Fingerabdruck oder anderer Bestätigung.</string>
+    <string name="onboarding_purpose_honest">Ehrlich gesagt: Android erlaubt keiner normalen App eine garantierte Sperre. Handyzeitvertreib nutzt nur offizielle Wege und sagt dir, was auf deinem Gerät möglich ist.</string>
+    <string name="onboarding_privacy_title">Deine Daten bleiben bei dir</string>
+    <string name="onboarding_privacy_body">Handyzeitvertreib arbeitet ohne Server. Es gibt keine Werbung, keine Analyse-Tools und keine Uploads.</string>
+    <string name="onboarding_usage_access_later">Ohne diesen Zugriff kann die App nichts messen. Du kannst ihn auch später in den Einstellungen erteilen.</string>
+    <string name="onboarding_notifications_title">Benachrichtigungen</string>
+    <string name="onboarding_notifications_body">Damit du erfährst, wenn ein Limit erreicht ist, auch wenn die App geschlossen ist.</string>
+    <string name="onboarding_notifications_once">Höchstens eine Nachricht pro Limit und Tag.</string>
+    <string name="onboarding_notifications_no_ads">Keine Werbung, keine Motivationssprüche, kein Dauerfeuer.</string>
+    <string name="onboarding_enforcement_title">Stärkerer Hinweis (optional)</string>
+    <string name="onboarding_enforcement_body">Wenn du möchtest, kann ein Bedienungshilfen-Dienst den Hinweis-Bildschirm sofort zeigen, statt nur zu benachrichtigen.</string>
+    <string name="onboarding_account_title">Konto</string>
+    <string name="onboarding_account_body">Ein Konto ist für die Nutzung nicht nötig.</string>
+    <string name="onboarding_apps_title">Erste Limits</string>
+    <string name="onboarding_apps_body">Wähle Apps, die du bewusster nutzen möchtest. Du kannst das später jederzeit ändern.</string>
+    <string name="onboarding_apps_default_limit">Tageslimit für die ausgewählten Apps</string>
+    <string name="onboarding_apps_loading">Apps werden geladen …</string>
+    <string name="onboarding_extension_title">Mehr Zeit anfordern</string>
+    <string name="onboarding_extension_body">Lege fest, ob und wie du nach einem erreichten Limit bewusst mehr Zeit bekommen kannst.</string>
+    <string name="onboarding_done_title">Alles bereit</string>
+    <string name="onboarding_done_body">Das ist dein aktueller Stand:</string>
+    <string name="onboarding_done_usage">Nutzungszugriff</string>
+    <string name="onboarding_done_notifications">Benachrichtigungen</string>
+    <string name="onboarding_done_enforcement">Bedienungshilfen-Dienst (optional)</string>
+    <string name="onboarding_done_limits">Start-Limits: %1$d</string>
+    <string name="onboarding_done_changeable">Alles lässt sich später in den Einstellungen ändern.</string>
+
+    <!-- Account -->
+    <string name="account_not_configured_chip">Nur lokal</string>
+    <string name="account_not_configured_body">In dieser Version ist noch keine Anmeldung eingebaut. Handyzeitvertreib funktioniert vollständig lokal auf diesem Gerät.</string>
+    <string name="account_privacy_body">Dein Konto enthält nur deine Identität. Deine Nutzungshistorie bleibt auf diesem Gerät.</string>
+    <string name="account_summary_local">Lokaler Modus</string>
+    <string name="account_summary_signed_out">Nicht angemeldet</string>
+    <string name="account_summary_loading">Wird geladen …</string>
+    <string name="account_summary_error">Konto derzeit nicht erreichbar</string>
+    <string name="account_what_title">Was ein Konto künftig umfassen darf</string>
+    <string name="account_what_identity">Deine Identität und nicht sensible Einstellungen</string>
+    <string name="account_what_no_usage">Keine Nutzungshistorie – sie bleibt auf dem Gerät</string>
+    <string name="account_what_optin">Kein Abgleich von Nutzungsdaten ohne deine ausdrückliche Zustimmung</string>
+
+    <!-- Privacy -->
+    <string name="privacy_mode_local">Nur lokal</string>
+    <string name="privacy_mode_active">Aktiv</string>
+    <string name="privacy_mode_local_body">Nutzungsdaten, Limits und Ereignisse werden ausschließlich auf diesem Gerät gespeichert. Die App hat keine Internet-Berechtigung.</string>
+    <string name="privacy_retention">Aufbewahrung</string>
+    <string name="privacy_retention_body">Ältere Tageswerte und Ereignisse werden automatisch gelöscht.</string>
+    <string name="privacy_retention_days">%1$d Tage</string>
+    <string name="privacy_stored_title">Was gespeichert wird</string>
+    <string name="privacy_stored_usage">Tagessummen pro App und Anzahl der Öffnungen</string>
+    <string name="privacy_stored_limits">Deine Limits und Gruppen</string>
+    <string name="privacy_stored_events">Erreichte Limits und gewährte Verlängerungen</string>
+    <string name="privacy_stored_settings">Deine Einstellungen</string>
+    <string name="privacy_no_network">Keine Übertragung ins Internet</string>
+    <string name="privacy_no_tracking">Keine Werbung, keine Analyse, kein Tracking</string>
+    <string name="privacy_policy_title">Datenschutzerklärung</string>
+    <string name="privacy_policy_placeholder">Platzhalter: Eine rechtlich geprüfte Datenschutzerklärung liegt noch nicht vor. Diese Übersicht beschreibt das tatsächlich umgesetzte Verhalten der App.</string>
+
+    <!-- Data management -->
+    <string name="data_export_title">Daten exportieren</string>
+    <string name="data_export_body">Speichert Tageswerte, Limits und Ereignisse als JSON-Datei an einem Ort deiner Wahl.</string>
+    <string name="data_delete_title">Daten löschen</string>
+    <string name="data_delete_history">Nutzungshistorie löschen</string>
+    <string name="data_delete_events">Ereignisse löschen</string>
+    <string name="data_delete_everything">Alles löschen und neu beginnen</string>
+    <string name="data_confirm_title">Wirklich löschen?</string>
+    <string name="data_confirm_history">Alle gespeicherten Tageswerte werden gelöscht. Limits bleiben erhalten.</string>
+    <string name="data_confirm_events">Alle Einträge zu erreichten Limits und Verlängerungen werden gelöscht. Heute gewährte Verlängerungen verfallen damit.</string>
+    <string name="data_confirm_everything">Nutzungshistorie, Ereignisse, Limits und Einstellungen werden gelöscht. Die App startet danach neu mit der Einrichtung.</string>
+    <string name="data_result_exported">Export gespeichert.</string>
+    <string name="data_result_export_failed">Der Export konnte nicht gespeichert werden.</string>
+    <string name="data_result_history_deleted">Nutzungshistorie gelöscht.</string>
+    <string name="data_result_events_deleted">Ereignisse gelöscht.</string>
+    <string name="data_result_everything_deleted">Alle Daten gelöscht.</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_permissions">Berechtigungen</string>
+    <string name="settings_account">Konto</string>
+    <string name="settings_privacy">Datenschutz</string>
+    <string name="settings_extension">Verlängerungen</string>
+    <string name="settings_extension_on">%1$d Min., höchstens %2$d× pro Tag</string>
+    <string name="settings_data">Daten verwalten</string>
+    <string name="settings_data_subtitle">Exportieren oder löschen</string>
+    <string name="settings_help">Hilfe und Grenzen</string>
+    <string name="settings_help_subtitle">Was die App kann und was nicht</string>
+    <string name="settings_notifications">Benachrichtigungen</string>
+    <string name="settings_limit_notifications">Bei erreichtem Limit benachrichtigen</string>
+    <string name="settings_limit_notifications_body">Höchstens einmal pro Limit und Tag.</string>
+    <string name="settings_notifications_blocked">Benachrichtigungen sind in Android für diese App blockiert.</string>
+    <string name="settings_appearance">Darstellung</string>
+    <string name="settings_theme">Design</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Hell</string>
+    <string name="theme_dark">Dunkel</string>
+    <string name="settings_dynamic_color">Farben vom Hintergrundbild</string>
+    <string name="settings_dynamic_color_body">Übernimmt die Akzentfarbe deines Systems.</string>
+    <string name="settings_reduce_motion">Bewegung reduzieren</string>
+    <string name="settings_reduce_motion_body">Schaltet Animationen ab. Gilt automatisch, wenn Animationen in Android deaktiviert sind.</string>
+    <string name="settings_version">Version %1$s</string>
+
+    <!-- Help -->
+    <string name="help_measure_title">Wie gemessen wird</string>
+    <string name="help_measure_body">Android protokolliert, wann eine App in den Vordergrund kommt und wieder verschwindet. Handyzeitvertreib liest diese Einträge und addiert die Zeiten. Das Protokoll ist kein Live-Datenstrom: Die Werte sind so aktuell wie die letzte Aktualisierung.</string>
+    <string name="help_enforcement_title">Wie Limits wirken</string>
+    <string name="help_enforcement_body">Ohne Zusatzdienst prüft die App etwa alle 15 Minuten und benachrichtigt dich. Mit dem optionalen Bedienungshilfen-Dienst erscheint der Hinweis-Bildschirm, wenn du eine App mit erreichtem Limit öffnest. Eine unumgehbare Sperre gibt es für normale Apps unter Android nicht.</string>
+    <string name="help_background_title">Hintergrundprüfung</string>
+    <string name="help_background_body">Android bündelt Hintergrundaufgaben, um Akku zu sparen. Im Energiesparmodus oder bei Doze kann die Prüfung später laufen.</string>
+    <string name="help_extension_title">Mehr Zeit</string>
+    <string name="help_extension_body">Eine Verlängerung wird nur nach erfolgreicher Bestätigung über Android gewährt. Die App sieht dabei nur, ob die Bestätigung geklappt hat – niemals deine biometrischen Daten.</string>
+    <string name="help_groups_title">App- und Gruppenlimits</string>
+    <string name="help_groups_body">Gilt für eine App sowohl ein eigenes Limit als auch ein Gruppenlimit, greift das, bei dem weniger Zeit übrig bleibt. In Summen wird jede App nur einmal gezählt.</string>
+    <string name="help_day_title">Was ein Tag ist</string>
+    <string name="help_day_body">Ein Tag beginnt um Mitternacht in der aktuellen Zeitzone deines Geräts. An Tagen mit Zeitumstellung ist er 23 oder 25 Stunden lang.</string>
+    <string name="help_oem_title">Herstellerunterschiede</string>
+    <string name="help_oem_body">Einige Hersteller beenden Hintergrunddienste besonders streng oder benennen Einstellungen anders. Wenn Hinweise ausbleiben, prüfe die Akku-Einstellungen für Handyzeitvertreib.</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_limits">Erreichte Limits</string>
+    <string name="notification_channel_limits_description">Eine ruhige Nachricht, wenn eine geplante Zeit vorbei ist.</string>
+    <string name="notification_limit_reached_title">Geplante Zeit für %1$s ist erreicht</string>
+    <string name="notification_limit_reached_text">Tippe, um deine Möglichkeiten zu sehen.</string>
+</resources>

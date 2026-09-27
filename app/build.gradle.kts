@@ -63,6 +63,14 @@ android {
         }
     }
 
+    // Robolectric reads assets from the merged debug variant, so the exported Room schemas
+    // (no user data) are added to debug assets only for schema and migration tests.
+    sourceSets {
+        getByName("debug") {
+            assets.srcDir("$projectDir/schemas")
+        }
+    }
+
     lint {
         warningsAsErrors = false
         abortOnError = true
@@ -111,4 +119,14 @@ dependencies {
     testImplementation(libs.androidx.work.testing)
     testImplementation(platform(libs.androidx.compose.bom))
     testImplementation(libs.androidx.compose.ui.test.junit4)
+}
+
+// Robolectric accesses JDK internals that are closed by default since JDK 17.
+tasks.withType<Test>().configureEach {
+    jvmArgs(
+        "--add-opens=java.base/java.io=ALL-UNNAMED",
+        "--add-opens=java.base/java.lang=ALL-UNNAMED",
+        "--add-exports=java.base/jdk.internal.access=ALL-UNNAMED",
+    )
+    maxHeapSize = "2g"
 }
