@@ -129,4 +129,6 @@ tasks.withType<Test>().configureEach {
         "--add-exports=java.base/jdk.internal.access=ALL-UNNAMED",
     )
     maxHeapSize = "2g"
+    // Optional visual review: ./gradlew :app:testDebugUnitTest --tests '*ScreenshotRenderTest' -Phzv.screenshots=<dir>
+    providers.gradleProperty("hzv.screenshots").orNull?.let { systemProperty("hzv.screenshots", it) }
 }

@@ -276,11 +276,14 @@ private fun EnforcementHint(
 }
 
 @Composable
-fun LimitProgressRow(limit: LimitItem) {
+fun LimitProgressRow(
+    limit: LimitItem,
+    showTitle: Boolean = true,
+) {
     Column(Modifier.fillMaxWidth()) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                limit.title,
+                if (showTitle) limit.title else "",
                 style = MaterialTheme.typography.bodyLarge,
                 color = HzvTheme.colors.textPrimary,
                 modifier = Modifier.weight(1f),

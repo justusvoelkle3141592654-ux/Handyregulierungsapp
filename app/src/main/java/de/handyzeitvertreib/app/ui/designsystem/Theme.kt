@@ -110,6 +110,8 @@ private fun schemeFrom(tokens: HzvColors): ColorScheme {
         onPrimaryContainer = tokens.textPrimary,
         secondary = tokens.accent,
         onSecondary = tokens.onAccent,
+        secondaryContainer = tokens.accentSoft,
+        onSecondaryContainer = tokens.textPrimary,
         background = tokens.backgroundTop,
         onBackground = tokens.textPrimary,
         surface = tokens.backgroundTop,

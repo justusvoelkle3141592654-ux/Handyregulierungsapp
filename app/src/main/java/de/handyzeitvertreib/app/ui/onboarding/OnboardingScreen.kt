@@ -137,7 +137,7 @@ fun OnboardingScreen(
                     Modifier
                         .fillMaxSize()
                         .verticalScroll(rememberScrollState())
-                        .padding(horizontal = HzvSpacing.screen, vertical = 8.dp),
+                        .padding(start = HzvSpacing.screen, end = HzvSpacing.screen, top = 8.dp, bottom = 24.dp),
                     verticalArrangement = Arrangement.spacedBy(HzvSpacing.gap),
                 ) {
                     StepContent(step, state, actions)

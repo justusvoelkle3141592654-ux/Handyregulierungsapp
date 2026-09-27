@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -343,29 +344,30 @@ fun BarChart(
     val colors = HzvTheme.colors
     val max = (data.maxOfOrNull { it.value } ?: 0L).coerceAtLeast(1L)
     val description = chartDescription + ": " + data.joinToString("; ") { "${it.label} ${it.accessibilityValue}" }
+    val grow = animatedProgress(1f)
     Column(modifier.fillMaxWidth().semantics { contentDescription = description }) {
-        Row(Modifier.fillMaxWidth().heightIn(min = height), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.Bottom) {
-            data.forEach { datum ->
-                val fraction = animatedProgress(datum.value.toFloat() / max)
-                Box(Modifier.weight(1f).heightIn(min = height), contentAlignment = Alignment.BottomCenter) {
-                    Canvas(Modifier.fillMaxWidth().heightIn(min = height)) {
-                        val barHeight = if (datum.available) (size.height * fraction).coerceAtLeast(4.dp.toPx()) else 4.dp.toPx()
-                        val color =
-                            when {
-                                !datum.available -> colors.track
-                                datum.highlighted -> colors.accent
-                                else -> colors.accent.copy(alpha = 0.55f)
-                            }
-                        drawRoundRect(
-                            color,
-                            topLeft = Offset(0f, size.height - barHeight),
-                            size = Size(size.width, barHeight),
-                            cornerRadius =
-                                androidx.compose.ui.geometry
-                                    .CornerRadius(10.dp.toPx()),
-                        )
+        Canvas(Modifier.fillMaxWidth().height(height)) {
+            val gap = 8.dp.toPx()
+            val count = data.size.coerceAtLeast(1)
+            val barWidth = (size.width - gap * (count - 1)) / count
+            val minBar = 4.dp.toPx()
+            data.forEachIndexed { index, datum ->
+                val fraction = datum.value.toFloat() / max * grow
+                val barHeight = if (datum.available) (size.height * fraction).coerceAtLeast(minBar) else minBar
+                val color =
+                    when {
+                        !datum.available -> colors.track
+                        datum.highlighted -> colors.accent
+                        else -> colors.accent.copy(alpha = 0.55f)
                     }
-                }
+                drawRoundRect(
+                    color,
+                    topLeft = Offset(index * (barWidth + gap), size.height - barHeight),
+                    size = Size(barWidth, barHeight),
+                    cornerRadius =
+                        androidx.compose.ui.geometry
+                            .CornerRadius(10.dp.toPx()),
+                )
             }
         }
         Row(Modifier.fillMaxWidth().padding(top = 6.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {

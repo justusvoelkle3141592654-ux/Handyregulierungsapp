@@ -101,13 +101,14 @@ Details are in `docs/android-capability-matrix.md`. Summary:
 | Topic | Status |
 | --- | --- |
 | Account provider (Firebase, Credential Manager, own backend) | Open. Only the interface exists. Needs a provider choice and credentials from the product owner. |
-| Release signing key | Open. The key must be created and kept by the product owner; `keystore.properties` is git-ignored. |
+| Release signing key | Resolved 2026-09-27: a key was generated outside the repository and handed to the product owner; `keystore.properties` and `*.jks` are git-ignored. |
 | Privacy policy text | Placeholder only; requires legal review before any public distribution. |
 | Google Play distribution | Not planned. If it becomes a goal, the accessibility-service policy review is a blocker. |
 | Weekly limits and time-window schedules | Deferred, see `docs/roadmap.md`. |
 
 ## 10. Implementation status (2026-09-27)
 
-Phases 1–8 are implemented. Open: validation on real devices (no emulator was available),
-account provider, release key, legal review of the privacy text. See
+Phases 1–8 are implemented, including a signed release APK, a dependency vulnerability
+scan and a visual review of rendered screens. Open: validation on real devices (no
+emulator was available), account provider, legal review of the privacy text. See
 `docs/verification-report.md` and `docs/roadmap.md`.

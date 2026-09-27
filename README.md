@@ -5,7 +5,7 @@ Tageslimits für einzelne Apps und App-Gruppen setzen, ruhige Hinweise beim Erre
 eines Limits und bewusste Verlängerung per Fingerabdruck bzw. Android-Biometrie.
 Alle Nutzungsdaten bleiben lokal auf dem Gerät; die App hat keine Internet-Berechtigung.
 
-Status: **MVP implementiert, auf der JVM getestet, noch nicht auf einem Gerät validiert.**
+Status: **MVP implementiert, auf der JVM getestet und visuell geprüft, noch nicht auf einem Gerät validiert.**
 Details: [`docs/verification-report.md`](docs/verification-report.md).
 
 ## Funktionen
@@ -49,6 +49,8 @@ Voraussetzungen: JDK 17 oder neuer (getestet mit 21), Android SDK mit Plattform 
 ./gradlew :app:testDebugUnitTest      # Unit-, Integrations- und UI-Tests (Robolectric)
 ./gradlew :app:lintDebug spotlessCheck
 ./gradlew :app:assembleRelease        # minifiziert; ohne Schlüssel unsigniert
+./scripts/osv-scan.sh                 # Abhängigkeiten gegen die OSV-Schwachstellendatenbank prüfen
+./gradlew :app:testDebugUnitTest --tests '*ScreenshotRenderTest' -Phzv.screenshots=/tmp/shots   # Screens als PNG rendern
 ```
 
 Debug-APK: `app/build/outputs/apk/debug/app-debug.apk` – per USB mit
@@ -98,5 +100,4 @@ Ein Modul (`:app`) mit klaren Paketgrenzen, siehe [`docs/architecture.md`](docs/
 ## Offene Entscheidungen
 
 - Konto-Anbieter (derzeit nur Schnittstelle, keine Anmeldung)
-- Release-Signaturschlüssel
 - Rechtlich geprüfte Datenschutzerklärung (derzeit Platzhalter)

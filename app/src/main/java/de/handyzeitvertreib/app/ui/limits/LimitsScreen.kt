@@ -220,7 +220,7 @@ private fun ConfiguredLimitCard(
 
             live != null -> {
                 Spacer(Modifier.height(12.dp))
-                LimitProgressRow(live)
+                LimitProgressRow(live, showTitle = false)
             }
         }
     }

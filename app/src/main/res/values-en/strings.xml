@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="duration_hours_minutes" tools:ignore="PluralsCandidate">%1$d h %2$d min</string>
-    <string name="duration_hours" tools:ignore="PluralsCandidate">%1$d h</string>
-    <string name="duration_minutes" tools:ignore="PluralsCandidate">%1$d min</string>
-    <string name="duration_less_than_minute">&lt; 1 min</string>
+    <string name="duration_hours_minutes" tools:ignore="PluralsCandidate">%1$d&#160;h %2$d&#160;min</string>
+    <string name="duration_hours" tools:ignore="PluralsCandidate">%1$d&#160;h</string>
+    <string name="duration_minutes" tools:ignore="PluralsCandidate">%1$d&#160;min</string>
+    <string name="duration_less_than_minute">&lt;&#160;1&#160;min</string>
 
     <string name="nav_today">Today</string>
     <string name="nav_apps">Apps</string>
@@ -151,9 +151,9 @@
 
     <string name="regulation_title">Your planned time for this app is complete.</string>
     <string name="regulation_not_reached_title">This limit is not reached right now.</string>
-    <string name="regulation_used_app">You used %1$s today, and your limit is %2$s.</string>
-    <string name="regulation_used_group">You used %1$s in this group today, and the shared limit is %2$s.</string>
-    <string name="regulation_remaining">%1$s left.</string>
+    <string name="regulation_used_app">Used today: %1$s · your limit: %2$s</string>
+    <string name="regulation_used_group">Used in this group today: %1$s · shared limit: %2$s</string>
+    <string name="regulation_remaining">Left: %1$s</string>
     <string name="regulation_reached_at">Reached at %1$s</string>
     <string name="regulation_choices">You can close the app, review your limits, or deliberately request more time.</string>
     <string name="regulation_leave">Leave app</string>

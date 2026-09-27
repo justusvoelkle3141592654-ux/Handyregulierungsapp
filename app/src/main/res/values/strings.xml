@@ -3,10 +3,10 @@
     <string name="app_name" translatable="false">Handyzeitvertreib</string>
 
     <!-- Durations -->
-    <string name="duration_hours_minutes" tools:ignore="PluralsCandidate">%1$d Std. %2$d Min.</string>
-    <string name="duration_hours" tools:ignore="PluralsCandidate">%1$d Std.</string>
-    <string name="duration_minutes" tools:ignore="PluralsCandidate">%1$d Min.</string>
-    <string name="duration_less_than_minute">&lt; 1 Min.</string>
+    <string name="duration_hours_minutes" tools:ignore="PluralsCandidate">%1$d&#160;Std. %2$d&#160;Min.</string>
+    <string name="duration_hours" tools:ignore="PluralsCandidate">%1$d&#160;Std.</string>
+    <string name="duration_minutes" tools:ignore="PluralsCandidate">%1$d&#160;Min.</string>
+    <string name="duration_less_than_minute">&lt;&#160;1&#160;Min.</string>
 
     <!-- Navigation -->
     <string name="nav_today">Heute</string>
@@ -165,9 +165,9 @@
     <!-- Regulation -->
     <string name="regulation_title">Deine geplante Zeit für diese App ist vorbei.</string>
     <string name="regulation_not_reached_title">Dieses Limit ist gerade nicht erreicht.</string>
-    <string name="regulation_used_app">Heute %1$s genutzt – dein Limit liegt bei %2$s.</string>
-    <string name="regulation_used_group">Heute %1$s in dieser Gruppe genutzt – das gemeinsame Limit liegt bei %2$s.</string>
-    <string name="regulation_remaining">Noch %1$s übrig.</string>
+    <string name="regulation_used_app">Heute genutzt: %1$s · dein Limit: %2$s</string>
+    <string name="regulation_used_group">Heute in dieser Gruppe genutzt: %1$s · gemeinsames Limit: %2$s</string>
+    <string name="regulation_remaining">Noch übrig: %1$s</string>
     <string name="regulation_reached_at">Erreicht um %1$s</string>
     <string name="regulation_choices">Du kannst die App schließen, deine Limits ansehen oder bewusst mehr Zeit anfordern.</string>
     <string name="regulation_leave">App verlassen</string>

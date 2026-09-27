@@ -15,5 +15,4 @@ Items deliberately deferred from the MVP, with the extension point in the code.
 | Database encryption | Decision pending | Room `openHelperFactory` |
 | Dependency injection framework | Manual container is sufficient for one module | Replace `AppContainer` with Hilt when modules are extracted |
 | Module extraction | Single module keeps the MVP simple | See `docs/architecture.md` |
-| Release signing | Key must be created and kept by the product owner | `keystore.properties` (git-ignored), read in `app/build.gradle.kts` |
 | Google Play distribution | Not planned | Review Accessibility API and usage-access policies first |

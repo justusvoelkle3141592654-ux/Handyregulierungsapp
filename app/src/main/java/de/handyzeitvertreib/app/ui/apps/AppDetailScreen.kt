@@ -240,7 +240,7 @@ fun AppDetailScreen(
                     )
                     Spacer(Modifier.height(6.dp))
                 }
-                LimitProgressRow(governing)
+                LimitProgressRow(governing, showTitle = governing.isGroup)
             }
             if (state.groupNames.isNotEmpty()) {
                 Spacer(Modifier.height(8.dp))
