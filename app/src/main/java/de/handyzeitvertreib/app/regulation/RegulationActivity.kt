@@ -6,12 +6,12 @@ import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.runtime.getValue
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import androidx.activity.viewModels
 import de.handyzeitvertreib.app.HzvApplication
 import de.handyzeitvertreib.app.MainActivity
 import de.handyzeitvertreib.app.R
@@ -53,9 +53,12 @@ class RegulationActivity : FragmentActivity() {
             },
         )
         bindIntent()
-        val prefsFlow = (application as HzvApplication).container.preferencesRepository.preferences
+        val prefsFlow =
+            (application as HzvApplication)
+                .container.preferencesRepository.preferences
+                .map<UserPreferences, UserPreferences?> { it }
         setContent {
-            val prefs by prefsFlow.map<UserPreferences, UserPreferences?> { it }.collectAsStateWithLifecycle(null)
+            val prefs by prefsFlow.collectAsStateWithLifecycle(null)
             val state by viewModel.state.collectAsStateWithLifecycle()
             HzvTheme(
                 themeMode = prefs?.themeMode ?: UserPreferences.DEFAULT.themeMode,

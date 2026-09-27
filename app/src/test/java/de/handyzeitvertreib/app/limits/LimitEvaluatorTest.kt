@@ -46,14 +46,24 @@ class LimitEvaluatorTest {
 
     @Test
     fun disabledLimitsAreIgnored() {
-        val evaluation = LimitEvaluator.evaluate(mapOf("a" to 90 * M), listOf(app(1, "a", 30, enabled = false)), listOf(group(2, 10, "a", enabled = false)))
+        val evaluation =
+            LimitEvaluator.evaluate(
+                mapOf("a" to 90 * M),
+                listOf(app(1, "a", 30, enabled = false)),
+                listOf(group(2, 10, "a", enabled = false)),
+            )
         assertThat(evaluation.statuses).isEmpty()
         assertThat(evaluation.isRegulated("a")).isFalse()
     }
 
     @Test
     fun groupSumsMemberUsage() {
-        val evaluation = LimitEvaluator.evaluate(mapOf("a" to 20 * M, "b" to 25 * M, "c" to 99 * M), emptyList(), listOf(group(1, 60, "a", "b")))
+        val evaluation =
+            LimitEvaluator.evaluate(
+                mapOf("a" to 20 * M, "b" to 25 * M, "c" to 99 * M),
+                emptyList(),
+                listOf(group(1, 60, "a", "b")),
+            )
         val status = evaluation.statuses.single()
         assertThat(status.usedMs).isEqualTo(45 * M)
         assertThat(status.remainingMs).isEqualTo(15 * M)

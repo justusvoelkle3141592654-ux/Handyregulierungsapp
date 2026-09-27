@@ -5,6 +5,7 @@ import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,7 +16,6 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.clickable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.material.icons.outlined.ErrorOutline
@@ -360,7 +360,9 @@ fun BarChart(
                             color,
                             topLeft = Offset(0f, size.height - barHeight),
                             size = Size(size.width, barHeight),
-                            cornerRadius = androidx.compose.ui.geometry.CornerRadius(10.dp.toPx()),
+                            cornerRadius =
+                                androidx.compose.ui.geometry
+                                    .CornerRadius(10.dp.toPx()),
                         )
                     }
                 }

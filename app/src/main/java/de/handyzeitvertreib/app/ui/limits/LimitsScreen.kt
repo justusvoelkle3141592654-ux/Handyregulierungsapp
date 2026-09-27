@@ -217,6 +217,7 @@ private fun ConfiguredLimitCard(
                 Spacer(Modifier.height(8.dp))
                 LimitStatusChip(stringResource(R.string.limit_status_paused), ChipTone.WARNING)
             }
+
             live != null -> {
                 Spacer(Modifier.height(12.dp))
                 LimitProgressRow(live)

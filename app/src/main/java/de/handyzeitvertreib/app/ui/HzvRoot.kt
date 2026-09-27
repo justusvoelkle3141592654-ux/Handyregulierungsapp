@@ -3,6 +3,7 @@ package de.handyzeitvertreib.app.ui
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -28,9 +29,8 @@ fun HzvRoot(
     container: AppContainer,
     startDestination: TopLevel = TopLevel.TODAY,
 ) {
-    val prefs by container.preferencesRepository.preferences
-        .map<UserPreferences, UserPreferences?> { it }
-        .collectAsStateWithLifecycle(null)
+    val prefsFlow = remember(container) { container.preferencesRepository.preferences.map<UserPreferences, UserPreferences?> { it } }
+    val prefs by prefsFlow.collectAsStateWithLifecycle(null)
     val scope = rememberCoroutineScope()
     LifecycleResumeEffect(container) {
         container.permissionMonitor.refresh()

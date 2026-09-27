@@ -2,10 +2,10 @@ package de.handyzeitvertreib.app.ui
 
 import com.google.common.truth.Truth.assertThat
 import de.handyzeitvertreib.app.core.model.AppUsage
-import de.handyzeitvertreib.app.data.management.LocalDataExport
 import de.handyzeitvertreib.app.data.db.AppLimitEntity
 import de.handyzeitvertreib.app.data.db.GroupLimitEntity
 import de.handyzeitvertreib.app.data.db.GroupMemberEntity
+import de.handyzeitvertreib.app.data.management.LocalDataExport
 import de.handyzeitvertreib.app.ui.insights.InsightsAggregation
 import de.handyzeitvertreib.app.usage.DayUsage
 import org.junit.Test

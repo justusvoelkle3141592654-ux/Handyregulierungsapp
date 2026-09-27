@@ -105,3 +105,9 @@ Details are in `docs/android-capability-matrix.md`. Summary:
 | Privacy policy text | Placeholder only; requires legal review before any public distribution. |
 | Google Play distribution | Not planned. If it becomes a goal, the accessibility-service policy review is a blocker. |
 | Weekly limits and time-window schedules | Deferred, see `docs/roadmap.md`. |
+
+## 10. Implementation status (2026-09-27)
+
+Phases 1–8 are implemented. Open: validation on real devices (no emulator was available),
+account provider, release key, legal review of the privacy text. See
+`docs/verification-report.md` and `docs/roadmap.md`.

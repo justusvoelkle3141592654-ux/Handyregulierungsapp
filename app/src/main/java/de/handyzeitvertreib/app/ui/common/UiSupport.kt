@@ -3,13 +3,13 @@ package de.handyzeitvertreib.app.ui.common
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import android.text.format.DateFormat
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.res.stringResource
+import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
@@ -56,7 +56,7 @@ object SystemSettings {
     fun openUsageAccess(context: Context) {
         val specific =
             Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS).apply {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) data = Uri.parse("package:${context.packageName}")
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) data = "package:${context.packageName}".toUri()
             }
         start(context, specific) || start(context, Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)) || openAppDetails(context)
     }
@@ -84,8 +84,7 @@ object SystemSettings {
         start(context, Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME))
     }
 
-    fun openAppDetails(context: Context): Boolean =
-        start(context, Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:${context.packageName}")))
+    fun openAppDetails(context: Context): Boolean = start(context, Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, "package:${context.packageName}".toUri()))
 
     private fun start(
         context: Context,

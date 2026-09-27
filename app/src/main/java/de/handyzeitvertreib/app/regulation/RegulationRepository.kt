@@ -20,7 +20,12 @@ class RegulationRepository(
 ) {
     private val mutex = Mutex()
 
-    fun observeDay(date: LocalDate): Flow<List<RegulationEvent>> = dao.observeForDay(date.toEpochDay()).map { list -> list.mapNotNull { it.toModel() } }
+    fun observeDay(date: LocalDate): Flow<List<RegulationEvent>> =
+        dao.observeForDay(date.toEpochDay()).map { list ->
+            list.mapNotNull {
+                it.toModel()
+            }
+        }
 
     fun observeRecent(limit: Int = 50): Flow<List<RegulationEvent>> = dao.observeRecent(limit).map { list -> list.mapNotNull { it.toModel() } }
 

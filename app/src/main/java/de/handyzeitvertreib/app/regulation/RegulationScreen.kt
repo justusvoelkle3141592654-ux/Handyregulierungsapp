@@ -167,14 +167,19 @@ private fun ExtensionSection(
                     modifier = Modifier.fillMaxWidth().testTag("regulation-extend"),
                 )
             }
-            ExtensionAvailability.DisabledByUser ->
+
+            ExtensionAvailability.DisabledByUser -> {
                 Text(stringResource(R.string.regulation_extension_disabled), style = MaterialTheme.typography.bodyMedium, color = HzvTheme.colors.textSecondary)
-            is ExtensionAvailability.DailyCapReached ->
+            }
+
+            is ExtensionAvailability.DailyCapReached -> {
                 Text(
                     stringResource(R.string.regulation_extension_cap, extension.maxPerDay),
                     style = MaterialTheme.typography.bodyMedium,
                     color = HzvTheme.colors.textSecondary,
                 )
+            }
+
             is ExtensionAvailability.AuthenticationUnavailable -> {
                 Text(
                     stringResource(authUnavailableText(extension.capability)),

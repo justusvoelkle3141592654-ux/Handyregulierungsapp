@@ -103,22 +103,32 @@ class RegulationViewModel(
         mutableState.value = current.copy(authenticating = true, outcome = null)
         viewModelScope.launch {
             val policy = container.preferencesRepository.current().extensionPolicy
-            val result = container.authenticator.authenticate(activity, request(available.minutes).copy(allowDeviceCredential = policy.allowDeviceCredential))
+            val result =
+                container.authenticator.authenticate(
+                    activity,
+                    request(available.minutes).copy(allowDeviceCredential = policy.allowDeviceCredential),
+                )
             val outcome =
                 when (result) {
                     AuthResult.Success -> {
                         container.regulationCoordinator.recordExtension(key, packageName, available.minutes)
                         ExtensionOutcome.GRANTED
                     }
+
                     AuthResult.Cancelled -> {
                         container.regulationCoordinator.recordOutcome(key, packageName, RegulationAction.EXTENSION_CANCELLED)
                         ExtensionOutcome.CANCELLED
                     }
+
                     is AuthResult.LockedOut -> {
                         container.regulationCoordinator.recordOutcome(key, packageName, RegulationAction.EXTENSION_DENIED)
                         if (result.permanent) ExtensionOutcome.LOCKED_OUT_PERMANENT else ExtensionOutcome.LOCKED_OUT
                     }
-                    AuthResult.NotAvailable -> ExtensionOutcome.NOT_AVAILABLE
+
+                    AuthResult.NotAvailable -> {
+                        ExtensionOutcome.NOT_AVAILABLE
+                    }
+
                     is AuthResult.Failed -> {
                         container.regulationCoordinator.recordOutcome(key, packageName, RegulationAction.EXTENSION_DENIED)
                         ExtensionOutcome.FAILED

@@ -65,6 +65,7 @@ class UsageRepository(
 
     private val mutex = Mutex()
     private var lastRefreshMs = 0L
+    private var lastFullBackfillMs = 0L
     private var cachedApps: List<InstalledApp>? = null
     private var cachedAppsAt = 0L
 
@@ -88,7 +89,10 @@ class UsageRepository(
                         if (!source.hasAccess()) {
                             TodayUsageState.AccessRequired
                         } else {
-                            computeAndStore(now, backfillDays)
+                            // A full 7-day backfill is only needed occasionally; yesterday is always re-read.
+                            val recentlyBackfilled = now - lastFullBackfillMs in 0 until FULL_BACKFILL_INTERVAL_MS
+                            val days = if (backfillDays > 1 && recentlyBackfilled) 1 else backfillDays
+                            computeAndStore(now, days).also { if (days == BACKFILL_DAYS) lastFullBackfillMs = now }
                         }
                     } catch (_: SecurityException) {
                         TodayUsageState.AccessRequired
@@ -127,7 +131,15 @@ class UsageRepository(
                 val usage = UsageAggregator.summarize(sessions, window)
                 usageDao.replaceDay(
                     DayRecordEntity(day.toEpochDay(), isComplete = !isToday, capturedAt = now, zoneId = zone.id),
-                    usage.values.map { UsageSnapshotEntity(day.toEpochDay(), it.packageName, it.foregroundMs, it.launchCount, it.lastUsedAt) },
+                    usage.values.map {
+                        UsageSnapshotEntity(
+                            day.toEpochDay(),
+                            it.packageName,
+                            it.foregroundMs,
+                            it.launchCount,
+                            it.lastUsedAt,
+                        )
+                    },
                 )
             }
             day = day.plusDays(1)
@@ -164,7 +176,8 @@ class UsageRepository(
             apps
         }
 
-    suspend fun excludedPackages(): Set<String> = preferences.current().excludedFromTotals + appsSource.homePackages()
+    /** Home launchers and user-excluded apps; not counted in screen-time totals. */
+    suspend fun excludedPackages(): Set<String> = withContext(ioDispatcher) { preferences.current().excludedFromTotals + appsSource.homePackages() }
 
     private suspend fun rememberLabels(now: Long) {
         val apps = installedApps()
@@ -172,7 +185,10 @@ class UsageRepository(
     }
 
     /** Last known labels, including uninstalled apps. */
-    fun observeKnownLabels(): Flow<Map<String, String>> = knownAppDao.observeAll().map { list -> list.associate { it.packageName to it.label } }
+    fun observeKnownLabels(): Flow<Map<String, String>> =
+        knownAppDao.observeAll().map { list ->
+            list.associate { it.packageName to it.label }
+        }
 
     fun observeDays(
         from: LocalDate,
@@ -209,6 +225,7 @@ class UsageRepository(
     fun resetInMemoryState() {
         state.value = TodayUsageState.Loading
         lastRefreshMs = 0
+        lastFullBackfillMs = 0
     }
 
     companion object {
@@ -217,5 +234,6 @@ class UsageRepository(
         /** Sessions that started up to this long before the queried range are still found. */
         const val LOOKBACK_MS = 6 * 60 * 60 * 1000L
         private const val APP_CACHE_MS = 5 * 60 * 1000L
+        private const val FULL_BACKFILL_INTERVAL_MS = 60 * 60 * 1000L
     }
 }

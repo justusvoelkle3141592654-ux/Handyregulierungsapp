@@ -104,8 +104,14 @@ class OnboardingViewModel(
         viewModelScope.launch {
             val installed = container.usageRepository.installedApps()
             val usage = container.usageRepository.refresh() as? TodayUsageState.Ready
-            val rank = usage?.apps?.mapIndexed { index, app -> app.packageName to index }?.toMap().orEmpty()
-            apps.value = installed.sortedWith(compareBy<InstalledApp> { rank[it.packageName] ?: Int.MAX_VALUE }.thenBy { it.label.lowercase() })
+            val rank =
+                usage
+                    ?.apps
+                    ?.mapIndexed { index, app -> app.packageName to index }
+                    ?.toMap()
+                    .orEmpty()
+            apps.value =
+                installed.sortedWith(compareBy<InstalledApp> { rank[it.packageName] ?: Int.MAX_VALUE }.thenBy { it.label.lowercase() })
         }
     }
 

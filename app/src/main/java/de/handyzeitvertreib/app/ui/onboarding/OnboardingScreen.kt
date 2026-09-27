@@ -198,6 +198,7 @@ private fun StepContent(
             Icon(Icons.Outlined.HourglassEmpty, contentDescription = null, tint = HzvTheme.colors.accent, modifier = Modifier.size(72.dp))
             StepTitle(stringResource(R.string.onboarding_welcome_title), stringResource(R.string.onboarding_welcome_body))
         }
+
         OnboardingStep.PURPOSE -> {
             StepTitle(stringResource(R.string.onboarding_purpose_title))
             GlassCard(Modifier.fillMaxWidth()) {
@@ -208,6 +209,7 @@ private fun StepContent(
             }
             Text(stringResource(R.string.onboarding_purpose_honest), style = MaterialTheme.typography.bodyMedium, color = HzvTheme.colors.textSecondary)
         }
+
         OnboardingStep.PRIVACY -> {
             StepTitle(stringResource(R.string.onboarding_privacy_title), stringResource(R.string.onboarding_privacy_body))
             GlassCard(Modifier.fillMaxWidth()) {
@@ -235,6 +237,7 @@ private fun StepContent(
                 }
             }
         }
+
         OnboardingStep.USAGE_ACCESS -> {
             StepTitle(stringResource(R.string.usage_access_title))
             UsageAccessExplanation(state.permissions.canReadUsage, actions.onOpenUsageAccess)
@@ -242,6 +245,7 @@ private fun StepContent(
                 Text(stringResource(R.string.onboarding_usage_access_later), style = MaterialTheme.typography.bodySmall, color = HzvTheme.colors.textSecondary)
             }
         }
+
         OnboardingStep.NOTIFICATIONS -> {
             val granted = state.permissions.notifications == GrantState.GRANTED
             StepTitle(stringResource(R.string.onboarding_notifications_title), stringResource(R.string.onboarding_notifications_body))
@@ -256,10 +260,12 @@ private fun StepContent(
                 }
             }
         }
+
         OnboardingStep.ENFORCEMENT -> {
             StepTitle(stringResource(R.string.onboarding_enforcement_title), stringResource(R.string.onboarding_enforcement_body))
             AccessibilityExplanation(state.permissions.accessibilityService == GrantState.GRANTED, actions.onOpenAccessibility)
         }
+
         OnboardingStep.ACCOUNT -> {
             StepTitle(stringResource(R.string.onboarding_account_title), stringResource(R.string.onboarding_account_body))
             GlassCard(Modifier.fillMaxWidth()) {
@@ -268,6 +274,7 @@ private fun StepContent(
                 Text(stringResource(R.string.account_not_configured_body), style = MaterialTheme.typography.bodyMedium, color = HzvTheme.colors.textSecondary)
             }
         }
+
         OnboardingStep.STARTER_APPS -> {
             StepTitle(stringResource(R.string.onboarding_apps_title), stringResource(R.string.onboarding_apps_body))
             GlassCard(Modifier.fillMaxWidth()) {
@@ -290,10 +297,12 @@ private fun StepContent(
                 }
             }
         }
+
         OnboardingStep.EXTENSION -> {
             StepTitle(stringResource(R.string.onboarding_extension_title), stringResource(R.string.onboarding_extension_body))
             ExtensionPolicyEditor(state.draft.extensionPolicy, state.authCapability, actions.onExtensionPolicyChange)
         }
+
         OnboardingStep.DONE -> {
             Spacer(Modifier.height(32.dp))
             StepTitle(stringResource(R.string.onboarding_done_title), stringResource(R.string.onboarding_done_body))

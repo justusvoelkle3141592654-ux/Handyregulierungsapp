@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">Handyzeitvertreib</string>
 
     <!-- Durations -->
-    <string name="duration_hours_minutes">%1$d Std. %2$d Min.</string>
-    <string name="duration_hours">%1$d Std.</string>
-    <string name="duration_minutes">%1$d Min.</string>
+    <string name="duration_hours_minutes" tools:ignore="PluralsCandidate">%1$d Std. %2$d Min.</string>
+    <string name="duration_hours" tools:ignore="PluralsCandidate">%1$d Std.</string>
+    <string name="duration_minutes" tools:ignore="PluralsCandidate">%1$d Min.</string>
     <string name="duration_less_than_minute">&lt; 1 Min.</string>
 
     <!-- Navigation -->
@@ -188,7 +188,7 @@
     <string name="regulation_unavailable_body">Das Limit wurde gelöscht, oder die Nutzungsdaten sind gerade nicht lesbar.</string>
 
     <!-- Authentication -->
-    <string name="auth_prompt_title">%1$d Minuten mehr bestätigen</string>
+    <string name="auth_prompt_title" tools:ignore="PluralsCandidate">%1$d Minuten mehr bestätigen</string>
     <string name="auth_prompt_subtitle">Die zusätzliche Zeit wird nur nach erfolgreicher Bestätigung gewährt.</string>
     <string name="auth_available">Bestätigung verfügbar</string>
     <string name="auth_not_available_short">Bestätigung nicht verfügbar</string>
@@ -305,7 +305,7 @@
     <string name="privacy_mode_local_body">Nutzungsdaten, Limits und Ereignisse werden ausschließlich auf diesem Gerät gespeichert. Die App hat keine Internet-Berechtigung.</string>
     <string name="privacy_retention">Aufbewahrung</string>
     <string name="privacy_retention_body">Ältere Tageswerte und Ereignisse werden automatisch gelöscht.</string>
-    <string name="privacy_retention_days">%1$d Tage</string>
+    <string name="privacy_retention_days" tools:ignore="PluralsCandidate">%1$d Tage</string>
     <string name="privacy_stored_title">Was gespeichert wird</string>
     <string name="privacy_stored_usage">Tagessummen pro App und Anzahl der Öffnungen</string>
     <string name="privacy_stored_limits">Deine Limits und Gruppen</string>
@@ -339,7 +339,7 @@
     <string name="settings_account">Konto</string>
     <string name="settings_privacy">Datenschutz</string>
     <string name="settings_extension">Verlängerungen</string>
-    <string name="settings_extension_on">%1$d Min., höchstens %2$d× pro Tag</string>
+    <string name="settings_extension_on" tools:ignore="PluralsCandidate">%1$d Min., höchstens %2$d× pro Tag</string>
     <string name="settings_data">Daten verwalten</string>
     <string name="settings_data_subtitle">Exportieren oder löschen</string>
     <string name="settings_help">Hilfe und Grenzen</string>

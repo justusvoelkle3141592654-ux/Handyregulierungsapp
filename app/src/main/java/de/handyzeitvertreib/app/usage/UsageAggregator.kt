@@ -79,16 +79,20 @@ object UsageAggregator {
                     active += activityKey
                     lastForegroundPackage = event.packageName
                 }
+
                 UsageEventKind.ACTIVITY_PAUSED, UsageEventKind.ACTIVITY_STOPPED -> {
                     val active = activeActivities[event.packageName] ?: continue
                     if (active.remove(activityKey) && active.isEmpty()) {
                         close(event.packageName, event.timestampMs)
                     }
                 }
+
                 UsageEventKind.SCREEN_OFF,
                 UsageEventKind.DEVICE_SHUTDOWN,
                 UsageEventKind.DEVICE_STARTUP,
-                -> closeAll(event.timestampMs)
+                -> {
+                    closeAll(event.timestampMs)
+                }
             }
         }
         openSessions.keys.toList().forEach { close(it, nowMs) }

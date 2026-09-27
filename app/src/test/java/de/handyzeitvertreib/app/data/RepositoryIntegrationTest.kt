@@ -61,7 +61,11 @@ class RepositoryIntegrationTest {
             val state = container.usageRepository.refresh() as TodayUsageState.Ready
             assertThat(state.totalMs).isEqualTo(30 * MINUTE)
             assertThat(state.usageByPackage["com.example.chat"]).isEqualTo(30 * MINUTE)
-            val today = container.usageRepository.observeDays(app.clock.today(), app.clock.today()).first().single()
+            val today =
+                container.usageRepository
+                    .observeDays(app.clock.today(), app.clock.today())
+                    .first()
+                    .single()
             assertThat(today.captured).isTrue()
             assertThat(today.apps.first { it.packageName == "com.example.chat" }.launchCount).isEqualTo(2)
         }
@@ -108,7 +112,11 @@ class RepositoryIntegrationTest {
             assertThat(snapshot.evaluation.governingFor("com.example.chat")!!.remainingMs).isEqualTo(20 * MINUTE)
 
             limits.setAppLimitEnabled(id, false)
-            assertThat(container.regulationCoordinator.evaluateNow()!!.evaluation.statuses).isEmpty()
+            assertThat(
+                container.regulationCoordinator
+                    .evaluateNow()!!
+                    .evaluation.statuses,
+            ).isEmpty()
 
             limits.deleteAppLimit(id)
             assertThat(limits.currentAppLimits()).isEmpty()
@@ -142,7 +150,9 @@ class RepositoryIntegrationTest {
             val status = snapshot.evaluation.governingFor("com.example.chat")!!
             assertThat(status.isReached).isFalse()
             assertThat(status.remainingMs).isEqualTo(4 * MINUTE)
-            assertThat(snapshot.events.map { it.action }).containsExactly(RegulationAction.LIMIT_REACHED, RegulationAction.EXTENSION_GRANTED).inOrder()
+            assertThat(
+                snapshot.events.map { it.action },
+            ).containsExactly(RegulationAction.LIMIT_REACHED, RegulationAction.EXTENSION_GRANTED).inOrder()
         }
 
     @Test
@@ -152,7 +162,11 @@ class RepositoryIntegrationTest {
             container.regulationCoordinator.recordExtension(LimitKey(LimitType.APP, id), "com.example.chat", 10)
             app.clock.now += 24 * HOUR
             val snapshot = container.regulationCoordinator.evaluateNow()!!
-            assertThat(snapshot.evaluation.statuses.single().extensionMs).isEqualTo(0)
+            assertThat(
+                snapshot.evaluation.statuses
+                    .single()
+                    .extensionMs,
+            ).isEqualTo(0)
         }
 
     @Test

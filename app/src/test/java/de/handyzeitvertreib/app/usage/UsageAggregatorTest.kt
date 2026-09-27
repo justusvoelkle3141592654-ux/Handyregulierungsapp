@@ -168,7 +168,19 @@ class UsageAggregatorTest {
 
     @Test
     fun totalRespectsExclusions() {
-        val usage = summarize(listOf(ev("a", 0, ACTIVITY_RESUMED), ev("a", 1 * H, ACTIVITY_PAUSED), ev("launcher", 1 * H, ACTIVITY_RESUMED), ev("launcher", 2 * H, ACTIVITY_PAUSED)))
+        val usage =
+            summarize(
+                listOf(
+                    ev("a", 0, ACTIVITY_RESUMED),
+                    ev("a", 1 * H, ACTIVITY_PAUSED),
+                    ev("launcher", 1 * H, ACTIVITY_RESUMED),
+                    ev(
+                        "launcher",
+                        2 * H,
+                        ACTIVITY_PAUSED,
+                    ),
+                ),
+            )
         assertThat(UsageAggregator.totalMs(usage.values)).isEqualTo(2 * H)
         assertThat(UsageAggregator.totalMs(usage.values, setOf("launcher"))).isEqualTo(1 * H)
     }

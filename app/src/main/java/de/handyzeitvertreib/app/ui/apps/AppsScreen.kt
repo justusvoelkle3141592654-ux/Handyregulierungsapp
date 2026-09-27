@@ -62,7 +62,7 @@ fun AppsScreen(
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
     LazyColumn(
-        Modifier.fillMaxSize(),
+        Modifier.fillMaxSize().testTag("apps-list"),
         contentPadding =
             PaddingValues(
                 start = HzvSpacing.screen,
@@ -123,9 +123,11 @@ fun AppsScreen(
             }
         }
         when {
-            state.loading ->
+            state.loading -> {
                 item { Box(Modifier.fillMaxWidth().padding(48.dp), contentAlignment = Alignment.Center) { CircularProgressIndicator() } }
-            state.items.isEmpty() ->
+            }
+
+            state.items.isEmpty() -> {
                 item {
                     EmptyState(
                         icon = Icons.Outlined.SearchOff,
@@ -133,10 +135,13 @@ fun AppsScreen(
                         body = stringResource(R.string.apps_empty_body),
                     )
                 }
-            else ->
+            }
+
+            else -> {
                 items(state.items, key = { it.packageName }) { item ->
                     GlassCard(Modifier.fillMaxWidth(), contentPadding = 4.dp) { AppListRow(item, onOpenApp) }
                 }
+            }
         }
     }
 }
@@ -148,8 +153,14 @@ private fun AppListRow(
 ) {
     val supporting =
         when {
-            !item.installed -> stringResource(R.string.apps_not_installed)
-            item.todayMs == null -> stringResource(R.string.apps_usage_unknown)
+            !item.installed -> {
+                stringResource(R.string.apps_not_installed)
+            }
+
+            item.todayMs == null -> {
+                stringResource(R.string.apps_usage_unknown)
+            }
+
             else -> {
                 val opens = item.launchCount ?: 0
                 stringResource(R.string.apps_row_supporting, formatDuration(item.todayMs), opens)

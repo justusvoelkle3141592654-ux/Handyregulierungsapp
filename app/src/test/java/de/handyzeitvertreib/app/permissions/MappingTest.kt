@@ -33,10 +33,18 @@ class MappingTest {
 
     @Test
     fun notificationMapping() {
-        assertThat(PermissionMapping.notifications(33, runtimePermissionGranted = false, notificationsEnabled = true)).isEqualTo(GrantState.DENIED)
-        assertThat(PermissionMapping.notifications(33, runtimePermissionGranted = true, notificationsEnabled = true)).isEqualTo(GrantState.GRANTED)
-        assertThat(PermissionMapping.notifications(30, runtimePermissionGranted = false, notificationsEnabled = true)).isEqualTo(GrantState.GRANTED)
-        assertThat(PermissionMapping.notifications(30, runtimePermissionGranted = true, notificationsEnabled = false)).isEqualTo(GrantState.DENIED)
+        assertThat(
+            PermissionMapping.notifications(33, runtimePermissionGranted = false, notificationsEnabled = true),
+        ).isEqualTo(GrantState.DENIED)
+        assertThat(
+            PermissionMapping.notifications(33, runtimePermissionGranted = true, notificationsEnabled = true),
+        ).isEqualTo(GrantState.GRANTED)
+        assertThat(
+            PermissionMapping.notifications(30, runtimePermissionGranted = false, notificationsEnabled = true),
+        ).isEqualTo(GrantState.GRANTED)
+        assertThat(
+            PermissionMapping.notifications(30, runtimePermissionGranted = true, notificationsEnabled = false),
+        ).isEqualTo(GrantState.DENIED)
     }
 
     @Test
@@ -75,8 +83,12 @@ class MappingTest {
         assertThat(BiometricMapping.capability(BiometricManager.BIOMETRIC_SUCCESS)).isEqualTo(AuthCapability.AVAILABLE)
         assertThat(BiometricMapping.capability(BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED)).isEqualTo(AuthCapability.NONE_ENROLLED)
         assertThat(BiometricMapping.capability(BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE)).isEqualTo(AuthCapability.NO_HARDWARE)
-        assertThat(BiometricMapping.capability(BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE)).isEqualTo(AuthCapability.HARDWARE_UNAVAILABLE)
-        assertThat(BiometricMapping.capability(BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED)).isEqualTo(AuthCapability.SECURITY_UPDATE_REQUIRED)
+        assertThat(
+            BiometricMapping.capability(BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE),
+        ).isEqualTo(AuthCapability.HARDWARE_UNAVAILABLE)
+        assertThat(
+            BiometricMapping.capability(BiometricManager.BIOMETRIC_ERROR_SECURITY_UPDATE_REQUIRED),
+        ).isEqualTo(AuthCapability.SECURITY_UPDATE_REQUIRED)
         assertThat(BiometricMapping.capability(12345)).isEqualTo(AuthCapability.UNKNOWN)
     }
 
@@ -116,6 +128,8 @@ class MappingTest {
             assertThat(AccountStateMapping.actions(AccountState.SignedOut).canSignIn).isTrue()
             val signedIn = AccountStateMapping.actions(AccountState.SignedIn("Kim"))
             assertThat(signedIn.canSignOut && signedIn.canDelete).isTrue()
-            assertThat(AccountStateMapping.actions(AccountState.Error(de.handyzeitvertreib.app.account.AccountError.OFFLINE)).showRetry).isTrue()
+            assertThat(
+                AccountStateMapping.actions(AccountState.Error(de.handyzeitvertreib.app.account.AccountError.OFFLINE)).showRetry,
+            ).isTrue()
         }
 }

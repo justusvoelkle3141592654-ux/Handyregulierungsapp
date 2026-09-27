@@ -55,9 +55,18 @@ class DashboardViewModel(
             container.usageRepository.observeKnownLabels(),
         ) { usage, snapshot, permissions, prefs, labels ->
             when (usage) {
-                TodayUsageState.Loading -> DashboardUiState.Loading
-                TodayUsageState.AccessRequired -> DashboardUiState.AccessRequired
-                TodayUsageState.Error -> DashboardUiState.Error
+                TodayUsageState.Loading -> {
+                    DashboardUiState.Loading
+                }
+
+                TodayUsageState.AccessRequired -> {
+                    DashboardUiState.AccessRequired
+                }
+
+                TodayUsageState.Error -> {
+                    DashboardUiState.Error
+                }
+
                 is TodayUsageState.Ready -> {
                     val excluded = container.usageRepository.excludedPackages()
                     val visible = usage.apps.filter { it.packageName !in excluded && it.foregroundMs > 0 }

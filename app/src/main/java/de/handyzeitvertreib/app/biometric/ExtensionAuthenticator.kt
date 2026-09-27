@@ -71,13 +71,17 @@ object BiometricMapping {
             BiometricPrompt.ERROR_NEGATIVE_BUTTON,
             BiometricPrompt.ERROR_CANCELED,
             -> AuthResult.Cancelled
+
             BiometricPrompt.ERROR_LOCKOUT -> AuthResult.LockedOut(permanent = false)
+
             BiometricPrompt.ERROR_LOCKOUT_PERMANENT -> AuthResult.LockedOut(permanent = true)
+
             BiometricPrompt.ERROR_NO_BIOMETRICS,
             BiometricPrompt.ERROR_HW_NOT_PRESENT,
             BiometricPrompt.ERROR_HW_UNAVAILABLE,
             BiometricPrompt.ERROR_NO_DEVICE_CREDENTIAL,
             -> AuthResult.NotAvailable
+
             else -> AuthResult.Failed(errorCode)
         }
 }

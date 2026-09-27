@@ -210,20 +210,25 @@ fun AppDetailScreen(
             Text(stringResource(R.string.app_detail_limit), style = MaterialTheme.typography.titleMedium, color = HzvTheme.colors.textPrimary)
             Spacer(Modifier.height(8.dp))
             when {
-                state.limitMinutes == null ->
+                state.limitMinutes == null -> {
                     Text(stringResource(R.string.app_detail_no_limit), style = MaterialTheme.typography.bodyMedium, color = HzvTheme.colors.textSecondary)
-                !state.limitEnabled ->
+                }
+
+                !state.limitEnabled -> {
                     Text(
                         stringResource(R.string.app_detail_limit_paused, formatMinutes(state.limitMinutes)),
                         style = MaterialTheme.typography.bodyMedium,
                         color = HzvTheme.colors.textSecondary,
                     )
-                else ->
+                }
+
+                else -> {
                     Text(
                         stringResource(R.string.app_detail_limit_value, formatMinutes(state.limitMinutes)),
                         style = MaterialTheme.typography.bodyMedium,
                         color = HzvTheme.colors.textSecondary,
                     )
+                }
             }
             state.governing?.let { governing ->
                 Spacer(Modifier.height(12.dp))

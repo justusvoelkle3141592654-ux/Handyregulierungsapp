@@ -35,7 +35,9 @@ class LimitRepository(
         val minutes = LimitRules.normalize(dailyLimitMinutes)
         val existing = dao.appLimitFor(packageName)
         return if (existing == null) {
-            dao.insertAppLimit(AppLimitEntity(packageName = packageName, dailyLimitMinutes = minutes, enabled = enabled, createdAt = now, updatedAt = now))
+            dao.insertAppLimit(
+                AppLimitEntity(packageName = packageName, dailyLimitMinutes = minutes, enabled = enabled, createdAt = now, updatedAt = now),
+            )
         } else {
             dao.updateAppLimit(existing.id, minutes, enabled, now)
             existing.id

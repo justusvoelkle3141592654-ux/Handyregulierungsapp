@@ -68,7 +68,10 @@ class AppLimitEditorViewModel(
             val existing = container.limitRepository.currentAppLimits().firstOrNull { it.packageName == packageName }
             val labels = container.usageRepository.observeKnownLabels().first()
             val label =
-                container.usageRepository.installedApps().firstOrNull { it.packageName == packageName }?.label
+                container.usageRepository
+                    .installedApps()
+                    .firstOrNull { it.packageName == packageName }
+                    ?.label
                     ?: labels[packageName]
                     ?: packageName
             mutableState.value =

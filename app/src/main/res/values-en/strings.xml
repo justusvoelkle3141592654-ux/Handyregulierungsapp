@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="duration_hours_minutes">%1$d h %2$d min</string>
-    <string name="duration_hours">%1$d h</string>
-    <string name="duration_minutes">%1$d min</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="duration_hours_minutes" tools:ignore="PluralsCandidate">%1$d h %2$d min</string>
+    <string name="duration_hours" tools:ignore="PluralsCandidate">%1$d h</string>
+    <string name="duration_minutes" tools:ignore="PluralsCandidate">%1$d min</string>
     <string name="duration_less_than_minute">&lt; 1 min</string>
 
     <string name="nav_today">Today</string>
@@ -173,7 +173,7 @@
     <string name="regulation_unavailable_title">Limit not available</string>
     <string name="regulation_unavailable_body">The limit was deleted, or usage data cannot be read right now.</string>
 
-    <string name="auth_prompt_title">Confirm %1$d more minutes</string>
+    <string name="auth_prompt_title" tools:ignore="PluralsCandidate">Confirm %1$d more minutes</string>
     <string name="auth_prompt_subtitle">The extra time is only granted after successful confirmation.</string>
     <string name="auth_available">Confirmation available</string>
     <string name="auth_not_available_short">Confirmation not available</string>
@@ -283,7 +283,7 @@
     <string name="privacy_mode_local_body">Usage data, limits and events are stored only on this device. The app has no internet permission.</string>
     <string name="privacy_retention">Retention</string>
     <string name="privacy_retention_body">Older daily values and events are deleted automatically.</string>
-    <string name="privacy_retention_days">%1$d days</string>
+    <string name="privacy_retention_days" tools:ignore="PluralsCandidate">%1$d days</string>
     <string name="privacy_stored_title">What is stored</string>
     <string name="privacy_stored_usage">Daily totals per app and number of opens</string>
     <string name="privacy_stored_limits">Your limits and groups</string>
@@ -315,7 +315,7 @@
     <string name="settings_account">Account</string>
     <string name="settings_privacy">Privacy</string>
     <string name="settings_extension">Extensions</string>
-    <string name="settings_extension_on">%1$d min, at most %2$d× per day</string>
+    <string name="settings_extension_on" tools:ignore="PluralsCandidate">%1$d min, at most %2$d× per day</string>
     <string name="settings_data">Manage data</string>
     <string name="settings_data_subtitle">Export or delete</string>
     <string name="settings_help">Help and limitations</string>

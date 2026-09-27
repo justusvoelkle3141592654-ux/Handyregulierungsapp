@@ -26,6 +26,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
@@ -77,7 +78,7 @@ fun DashboardScreen(
     contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
     LazyColumn(
-        Modifier.fillMaxSize(),
+        Modifier.fillMaxSize().testTag("dashboard-list"),
         contentPadding =
             PaddingValues(
                 start = HzvSpacing.screen,
@@ -101,11 +102,13 @@ fun DashboardScreen(
             }
         }
         when (state) {
-            DashboardUiState.Loading ->
+            DashboardUiState.Loading -> {
                 item {
                     Box(Modifier.fillMaxWidth().padding(48.dp), contentAlignment = Alignment.Center) { CircularProgressIndicator() }
                 }
-            DashboardUiState.AccessRequired ->
+            }
+
+            DashboardUiState.AccessRequired -> {
                 item {
                     EmptyState(
                         icon = Icons.Outlined.DataUsage,
@@ -115,7 +118,9 @@ fun DashboardScreen(
                         onAction = actions.onSetUpUsageAccess,
                     )
                 }
-            DashboardUiState.Error ->
+            }
+
+            DashboardUiState.Error -> {
                 item {
                     ErrorState(
                         title = stringResource(R.string.error_usage_title),
@@ -124,7 +129,11 @@ fun DashboardScreen(
                         onRetry = actions.onRefresh,
                     )
                 }
-            is DashboardUiState.Ready -> readyContent(state, actions)
+            }
+
+            is DashboardUiState.Ready -> {
+                readyContent(state, actions)
+            }
         }
     }
 }

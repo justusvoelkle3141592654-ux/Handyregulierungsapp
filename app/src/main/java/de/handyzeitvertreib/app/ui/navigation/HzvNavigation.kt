@@ -101,10 +101,19 @@ private fun titleFor(
     page: String?,
 ): Int? =
     when (route) {
-        Routes.APP_DETAIL -> R.string.title_app_detail
-        Routes.APP_LIMIT -> R.string.title_app_limit
-        Routes.GROUP_LIMIT -> R.string.title_group_limit
-        Routes.SETTINGS_PAGE ->
+        Routes.APP_DETAIL -> {
+            R.string.title_app_detail
+        }
+
+        Routes.APP_LIMIT -> {
+            R.string.title_app_limit
+        }
+
+        Routes.GROUP_LIMIT -> {
+            R.string.title_group_limit
+        }
+
+        Routes.SETTINGS_PAGE -> {
             when (page?.let { runCatching { SettingsDestination.valueOf(it) }.getOrNull() }) {
                 SettingsDestination.PERMISSIONS -> R.string.settings_permissions
                 SettingsDestination.ACCOUNT -> R.string.settings_account
@@ -116,7 +125,11 @@ private fun titleFor(
                 SettingsDestination.ACCESSIBILITY -> R.string.accessibility_title
                 null -> null
             }
-        else -> null
+        }
+
+        else -> {
+            null
+        }
     }
 
 private fun NavHostController.navigateTopLevel(destination: TopLevel) {

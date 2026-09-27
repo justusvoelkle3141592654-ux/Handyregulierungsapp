@@ -13,10 +13,10 @@ import de.handyzeitvertreib.app.data.management.LocalDataManager
 import de.handyzeitvertreib.app.data.prefs.PreferencesRepository
 import de.handyzeitvertreib.app.enforcement.LimitNotifier
 import de.handyzeitvertreib.app.limits.LimitRepository
+import de.handyzeitvertreib.app.permissions.GrantState
 import de.handyzeitvertreib.app.permissions.PermissionChecker
 import de.handyzeitvertreib.app.permissions.PermissionMonitor
 import de.handyzeitvertreib.app.permissions.PermissionProvider
-import de.handyzeitvertreib.app.permissions.GrantState
 import de.handyzeitvertreib.app.regulation.RegulationCoordinator
 import de.handyzeitvertreib.app.regulation.RegulationRepository
 import de.handyzeitvertreib.app.usage.AndroidInstalledAppsSource
